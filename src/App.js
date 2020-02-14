@@ -14,19 +14,19 @@ export default class App extends React.Component {
     }
   }
 
-  componentDidMount() {
-    axios.get('/api/inventory').then(res => {
+  componentDidMount = async () => {
+    await axios.get('/api/inventory').then(res => {
       this.setState({inventory: res.data})
     })
   }
 
   render() {
     return (
-      <>
+      <div className='App' >
         <Header />
         <Dashboard inventory={this.state.inventory} />
         <Form getInventory={this.componentDidMount} />
-      </>
+      </div>
     )
   }
 }

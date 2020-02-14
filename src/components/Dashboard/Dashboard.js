@@ -8,7 +8,7 @@ export default class Dashboard extends React.Component {
       return <Product key={i}
                       name={product.name}
                       price={product.price}
-                      imgurl={product.imgurl} />
+                      img={product.img} />
     })
     
     return (

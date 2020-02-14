@@ -9,12 +9,12 @@ module.exports = {
   },
 
   addProduct: (req, res) => {
-    let {name, price, imgurl} = req.body
+    let {name, price, img} = req.body
     const dbObj = req.app.get('db')
 
-    dbObj.add_product([name, price, imgurl]).then(product => {
+    dbObj.add_product([name, price, img]).then(product => {
       res.status(200).send(product)
     }).catch(err => res.status(500).send(err))
-  }
+  },
   
 }
