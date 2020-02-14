@@ -12,11 +12,9 @@ export default class Form extends React.Component {
       isEditing: false,
       selectedProduct: null
     }
-
-    this.handleNameInput = this.handleNameInput.bind(this)
   }
 
-  handleNameInput(ev) {
+  handleNameInput = (ev) => {
     this.setState({name: ev.target.value})
   }
   handlePriceInput = (ev) => {
@@ -34,6 +32,12 @@ export default class Form extends React.Component {
     axios.post('/api/product', {name: this.state.name, price: this.state.price, img: this.state.img}).then(res => {
       this.props.getInventory()
       this.resetStateValues()
+    })
+  }
+
+  updateProduct = (id) => {
+    axios.put(`/api/product${id}`, {name: this.state.name, price: this.state.price, img: this.state.img}).then(res => {
+      this.componentDidUpdate()
     })
   }
 

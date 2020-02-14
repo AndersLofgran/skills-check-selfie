@@ -18,7 +18,8 @@ export default class Dashboard extends React.Component {
                       name={product.name}
                       price={product.price}
                       img={product.img}
-                      removeProduct={this.removeProduct} />
+                      removeProduct={this.removeProduct}
+                      updateProduct={this.updateProduct} />
     })
     
     return (

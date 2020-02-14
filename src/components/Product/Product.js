@@ -13,6 +13,7 @@ export default class Product extends React.Component {
           <div>Product: {name}</div>
           <div>Price: ${price}</div>
           <button onClick={() => this.props.removeProduct(id)} >Remove</button>
+          <button onClick={() => this.props.updateProduct(id)} >Edit</button>
         </div>
       </div>
     )

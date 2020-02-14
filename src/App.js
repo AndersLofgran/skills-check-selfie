@@ -13,12 +13,17 @@ export default class App extends React.Component {
       inventory: [],
       selectedProduct: null
     }
+    this.componentDidMount = this.componentDidMount.bind(this)
   }
 
-  componentDidMount = () => {
+  componentDidMount() {
     axios.get('/api/inventory').then(res => {
       this.setState({inventory: res.data})
     })
+  }
+
+  getSelectedProduct = (id) => {
+      this.setState({selectedProduct: })
   }
 
   render() {
@@ -27,7 +32,8 @@ export default class App extends React.Component {
         <Header />
         <div className='MainContainer'>
           <Dashboard inventory={this.state.inventory}
-                    getInventory={this.componentDidMount} />
+                     getInventory={this.componentDidMount}
+                     updateProduct={this.updateProduct} />
           <Form getInventory={this.componentDidMount}
                 selectedProduct={this.state.selectedProduct} />
         </div>

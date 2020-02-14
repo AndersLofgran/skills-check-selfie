@@ -20,12 +20,20 @@ module.exports = {
   removeProduct: (req, res) => {
     let {id} = req.params
     const dbObj = req.app.get('db')
-
+    
     dbObj.remove_product([id]).then(() => {
       res.sendStatus(200)
     }).catch(err => res.status(500).send(err))
   },
-
-
+  
+  updateProduct: (req, res) => {
+    let {id} = req.params
+    let {name, price, img} = req.body
+    const dbObj = req.app.get('db')
+    
+    dbObj.update_product([id, name, price, img]).then(product => {
+      res.status(200).send(product)
+    }).catch(err => res.status(500).send(err))
+  }
   
 }
