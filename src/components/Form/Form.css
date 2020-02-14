@@ -1,0 +1,39 @@
+.Form {
+  width: 400px;
+  height: min-content;
+  margin: 25px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #3ad886;
+}
+  .Form > img {
+    width: 200px;
+    height: 200px;
+    background-image: url('https://amerikicklanghorne.com/wp-content/uploads/2017/04/default-image.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+
+.FormInput {
+  width: 100%;
+  padding: 10px;
+}
+.FormInput > input {
+  width: 100%;
+}
+
+.FormButton {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+  .FormButton > button {
+    padding: 10px;
+    background-color: #ef6b5a;
+    border-radius: 5px;
+    border: none;
+  }

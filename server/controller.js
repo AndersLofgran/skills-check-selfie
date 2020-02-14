@@ -16,5 +16,16 @@ module.exports = {
       res.status(200).send(product)
     }).catch(err => res.status(500).send(err))
   },
+
+  removeProduct: (req, res) => {
+    let {id} = req.params
+    const dbObj = req.app.get('db')
+
+    dbObj.remove_product([id]).then(() => {
+      res.sendStatus(200)
+    }).catch(err => res.status(500).send(err))
+  },
+
+
   
 }

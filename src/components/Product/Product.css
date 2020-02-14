@@ -1,0 +1,16 @@
+.Product {
+  width: 500px;
+  margin: 10px auto;
+  /* padding: 5px; */
+  border-radius: 5px;
+  background-color: #d34735;
+  display: flex;
+}
+  .ProductInfo {
+    margin: 5px;
+  }
+  .Product > img {
+    height: 150px;
+    width: 200px;
+    margin: 10px;
+  }

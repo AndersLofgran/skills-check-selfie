@@ -10,22 +10,27 @@ export default class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      inventory: []
+      inventory: [],
+      selectedProduct: null
     }
   }
 
-  componentDidMount = async () => {
-    await axios.get('/api/inventory').then(res => {
+  componentDidMount = () => {
+    axios.get('/api/inventory').then(res => {
       this.setState({inventory: res.data})
     })
   }
 
   render() {
     return (
-      <div className='App' >
+      <div>
         <Header />
-        <Dashboard inventory={this.state.inventory} />
-        <Form getInventory={this.componentDidMount} />
+        <div className='MainContainer'>
+          <Dashboard inventory={this.state.inventory}
+                    getInventory={this.componentDidMount} />
+          <Form getInventory={this.componentDidMount}
+                selectedProduct={this.state.selectedProduct} />
+        </div>
       </div>
     )
   }

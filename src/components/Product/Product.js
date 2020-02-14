@@ -1,15 +1,19 @@
 import React from 'react'
+import './Product.css'
 
 export default class Product extends React.Component {
 
   render() {
-    const {name, price, img} = this.props
+    const {id, name, price, img} = this.props
     
     return (
-      <div>
-        <div>Product: {name}</div>
-        <div>Price: ${price}</div>
-        <div>URL: {img}</div>
+      <div className='Product'>
+        <img src={img}></img>
+        <div className='ProductInfo'>
+          <div>Product: {name}</div>
+          <div>Price: ${price}</div>
+          <button onClick={() => this.props.removeProduct(id)} >Remove</button>
+        </div>
       </div>
     )
   }
